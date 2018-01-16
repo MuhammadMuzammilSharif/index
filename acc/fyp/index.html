@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Minimum Cost Flow Network Simplex Problem</title>
+	<script type="text/javascript" src="mapSettings.js"></script>
+	<script type="text/javascript" src="iterations.js"></script>
+	<script type="text/javascript" src="problem.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="map">
+		<div id="map1"></div>
+		<div id="map1_btn_parent">
+			<button id="button0" style="vertical-align:middle" disabled="true" onclick="loadFirst()">
+				Move To First
+			</button>
+			<button id="button1" style="vertical-align:middle" disabled="true" onclick="loadPrev()">
+				<span>Previous</span>
+			</button>
+			<b id="iteration">Iteration #</b>
+			<button id="button2" style="vertical-align:middle" onclick="loadNext()">
+				<span>Next</span>
+			</button>
+			<button id="button3" style="vertical-align:middle" onclick="loadLast()">
+				Final Result
+			</button>
+		</div>
+		<b id="title_map1">Iterations</b>
+		<b id="total"></b>
+	</div>
+	<div id="map2_parent">
+		<div id="map2"></div>
+		<b id="title_map2">Problem</b>
+		<span id="separator"></span>
+	</div>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+	<script>
+		
+		function Label(opt_options) {
+
+			this.setValues(opt_options);
+
+			var span = this.span_ = document.createElement('span');
+			span.style.cssText = 'font-size:14px;font-weight:bold; color:#000000; position: relative; left: -50%; top: -55px; ' +
+			'white-space: nowrap;' +
+			'padding: 2px;';
+
+			var div = this.div_ = document.createElement('div');
+			div.appendChild(span);
+			div.style.cssText = 'position: absolute; display: none';
+		}
+		Label.prototype = new google.maps.OverlayView();
+
+		Label.prototype.onAdd = function() {
+			var pane = this.getPanes().floatPane;
+			pane.appendChild(this.div_);
+
+
+			var me = this;
+			this.listeners_ = [
+			google.maps.event.addListener(this, 'position_changed',
+				function() { me.draw(); }),
+			google.maps.event.addListener(this, 'text_changed',
+				function() { me.draw(); })
+			];
+		};
+
+		Label.prototype.onRemove = function() {
+			var i, I;
+			this.div_.parentNode.removeChild(this.div_);
+
+
+			for (i = 0, I = this.listeners_.length; i < I; ++i) {
+				google.maps.event.removeListener(this.listeners_[i]);
+			}
+		};
+
+		Label.prototype.draw = function() {
+			var projection = this.getProjection();
+			var position = projection.fromLatLngToDivPixel(this.get('position'));
+
+			var div = this.div_;
+			div.style.left = position.x + 'px';
+			div.style.top = position.y + 'px';
+			div.style.display = 'block';
+
+			this.span_.innerHTML = this.get('text').toString();
+		};
+
+		function LineLable(opt_options) {
+
+			this.setValues(opt_options);
+
+			var span = this.span_ = document.createElement('span');
+			span.style.cssText = 'position: relative; left: -50%; top: -8px; ' +
+			'white-space: nowrap; border: 1px solid blue; ' +
+			'padding: 2px; background-color: white';
+
+			var div = this.div_ = document.createElement('div');
+			div.appendChild(span);
+			div.style.cssText = 'position: absolute; display: none';
+		}
+		LineLable.prototype = new google.maps.OverlayView();
+
+		LineLable.prototype.onAdd = function() {
+			var pane = this.getPanes().floatPane;
+			pane.appendChild(this.div_);
+
+			var me = this;
+			this.listeners_ = [
+			google.maps.event.addListener(this, 'position_changed',
+				function() { me.draw(); }),
+			google.maps.event.addListener(this, 'text_changed',
+				function() { me.draw(); })
+			];
+		};
+
+		LineLable.prototype.onRemove = function() {
+			var i, I;
+			this.div_.parentNode.removeChild(this.div_);
+
+			for (i = 0, I = this.listeners_.length; i < I; ++i) {
+				google.maps.event.removeListener(this.listeners_[i]);
+			}
+		};
+
+		LineLable.prototype.draw = function() {
+			var projection = this.getProjection();
+			var position = projection.fromLatLngToDivPixel(this.get('position'));
+
+			var div = this.div_;
+			div.style.left = position.x + 'px';
+			div.style.top = position.y + 'px';
+			div.style.display = 'block';
+
+			this.span_.innerHTML = this.get('text').toString();
+		};
+
+		var polylines = [];
+		var polylines2 = [];
+		var markers = [];
+		var markers2 = [];
+		var labels = [];
+		var labels2 = [];
+		var map = null;
+		var map2 = null;
+		var current = -1;
+
+		function initMap() {
+			var latlng = {lat: 31.4950, lng: 74.3000};
+			map = new google.maps.Map(document.getElementById('map1'), {
+				zoom: 12,
+				center: latlng,
+				styles: style_plane
+			});
+			map2 = new google.maps.Map(document.getElementById('map2'), {
+				zoom: 12,
+				center: latlng,
+				styles: style_plane
+			});
+
+			loadProblem();
+			loadCurrent();
+			toggleBtn();
+		}
+
+		function loadProblem() {
+			clearMap2();
+			for (var i = 1; i < getProblemData().nodes.length; i++) {
+				addMarker(getProblemData().nodes[i],i,map2,0);
+			}
+
+			for (var i = 0 ; i < getProblemData().nonBasicArcs.length; i++) {
+				addPolyline(getProblemData().nonBasicArcs[i],"#ff0000",map2,0);
+			}
+		}
+
+		function getProblemData() {
+			if(current < 0){
+				return problem;
+			}
+			return iterations[0];
+		}
+
+		function getData() {
+			if(current>= iterations.length){
+				return iterations[iterations.length-1]
+			}
+			if(current < 0){
+				return iterations[0];
+			}
+			return iterations[current];
+		}
+
+		function addMarker(each,i,map,isItreration){
+			var pos = {lat: each.lat,lng: each.lng};
+			var icon = null;
+			if(i == 0){
+				icon = "pin0.png";
+			}else if(each.supply >= 0){
+				icon="pin2.png"
+			}else {
+				icon = "pin1.png"
+			}
+			var marker = new google.maps.Marker({
+				position: pos,
+				label: {color: '#000000', fontWeight: 'bold', fontSize: '14px', text: i.toString()},
+				map:map,
+				icon:icon
+			});
+			
+			var myLabel = new Label();
+			myLabel.bindTo('position', marker, 'position');
+			myLabel.set('text', each.supply.toString());
+			myLabel.setMap(map);
+			
+			if(isItreration==1){
+				markers.push(marker);
+				labels.push(myLabel);
+			}else{
+				markers2.push(marker);
+				labels2.push(myLabel);
+			}
+		}
+
+		function loadNext(){
+			current = current + 1;
+			if(current >= iterations.length){
+				current = iterations.length - 1;
+				return;
+			}
+
+			toggleBtn();
+			loadCurrent();
+			if(current <= 0){
+				loadProblem();
+			}
+		}
+
+		function loadFirst() {
+			current = -1;
+			toggleBtn();
+			loadCurrent();
+			loadProblem();
+		}
+
+		function loadLast() {
+			var lastCurrent = current;
+			current = iterations.length;
+			toggleBtn();
+			loadCurrent();
+			if(lastCurrent < 0){
+				loadProblem();
+			}
+		}
+
+		function loadPrev(){
+			current = current - 1;
+			if(current < -1){
+				current = -1;
+				return;
+			}
+
+			toggleBtn();
+			loadCurrent();
+			if(current < 0){
+				loadProblem();
+			}
+		}
+
+		function toggleBtn(argument) {
+			if(current == (iterations.length-1)){
+				disableButton('button2');
+				enableButton('button3');
+				enableButton('button0');
+				enableButton('button1');
+			}else if(current >= iterations.length){
+				disableButton('button2');
+				disableButton('button3');
+				enableButton('button0');
+				enableButton('button1');
+			}else if (current == -1){
+				disableButton('button1');
+				disableButton('button0');
+				enableButton('button2');
+				enableButton('button3');
+			}else{
+				enableButton('button2');
+				enableButton('button3');
+				enableButton('button0');
+				enableButton('button1');
+			}
+		}
+
+		function disableButton(b){
+			document.getElementById(b).disabled = true;
+		}
+
+		function enableButton(b) {
+			document.getElementById(b).disabled = false;
+		}
+
+		function clearMap2() {
+			for (var i = 0; i < polylines2.length; i++) {
+				polylines2[i].setMap(null);
+			}
+			polylines2 = [];
+
+			for (var i = 0; i < markers2.length; i++) {
+				markers2[i].setMap(null);
+			}
+			markers2 = [];
+
+			for (var i = 0; i < labels2.length; i++) {
+				labels2[i].setMap(null);
+			}
+			labels2 = [];
+		}
+
+		function clearMap() {
+			polylines.forEach(function(each){
+				each.setMap(null);
+			});
+			polylines = [];
+			markers.forEach(function(mar){
+				mar.setMap(null);
+			});
+			markers = [];
+			labels.forEach(function(lb){
+				lb.setMap(null);
+			});
+			labels = [];
+		}
+
+		function loadCurrent(){
+			clearMap();
+			if(current < iterations.length){
+				for (var i = 0; i < getData().nodes.length; i++) {
+					addMarker(getData().nodes[i],i,map,1);
+				}
+				var total = 0;
+				getData().basicArcs.forEach(function(each){
+					addPolyline(each,"#177729",map,1);
+					total = total + (each.xij * each.cost); 
+				});
+				document.getElementById('iteration').innerHTML = "Iteration # " + current.toString();
+				document.getElementById('total').innerHTML = "Total Cost = " + total.toString();
+			}else{
+				for (var i = 1; i < getData().nodes.length; i++) {
+					addMarker(getData().nodes[i],i,map,1);
+				}
+				var total = 0;
+				getData().basicArcs.forEach(function(each){
+					if(each.i != 0 && each.j != 0){
+						addPolyline(each,"#177729",map,1);
+					}
+					total = total + (each.xij * each.cost); 
+				});
+				document.getElementById('iteration').innerHTML = "Iteration # " + current.toString();
+				document.getElementById('total').innerHTML = "Total Cost = " + total.toString();
+			}
+		}
+
+		function addPolyline(each,color,map,isItreration) {
+			var s = {lat: getData().nodes[each.i].lat,lng: getData().nodes[each.i].lng};
+			var e = {lat: getData().nodes[each.j].lat,lng: getData().nodes[each.j].lng};
+			var lb = {lat:((getData().nodes[each.i].lat+getData().nodes[each.j].lat)/2),lng:((getData().nodes[each.i].lng + getData().nodes[each.j].lng)/2)};
+			var myLabel = new LineLable();
+
+			var mark = new google.maps.Marker({
+				position: lb,
+				map:map,
+				visible:false
+			});
+			myLabel.bindTo('position', mark, 'position');
+			var text = "<b>" + each.xij.toString() + "</b>, " + each.cost.toString();
+			myLabel.set('text', text);
+			myLabel.setMap(map);
+			var poly = new google.maps.Polyline({
+				path:[s,e],
+				geodesic: true,
+				strokeColor: color,
+				strokeWeight: 2,
+				map:map,
+				icons: [{
+					icon: {
+						path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+					},
+					offset: '100%'
+				}]
+			});
+			if(isItreration == 1){
+				polylines.push(poly);
+				labels.push(myLabel);
+			}else{
+				polylines2.push(poly);
+				labels2.push(myLabel);
+			}
+		}
+		google.maps.event.addDomListener(window, 'load', initMap);
+	</script>
+</body>
+</html>
