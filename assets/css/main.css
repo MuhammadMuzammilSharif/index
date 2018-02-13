@@ -3081,3 +3081,24 @@ input[type="button"]:disabled,
 	}
 
 }
+
+.inner p a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+.inner p a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+.inner p a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.inner p a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
