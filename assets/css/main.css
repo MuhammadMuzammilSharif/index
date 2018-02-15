@@ -3090,3 +3090,7 @@ input[type="button"]:disabled,
     font-family: FontAwesome;
     visibility: hidden;
 }
+
+.error_parent span{
+	font-family: FontAwesome;
+}

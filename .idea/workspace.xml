@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34e4c788-7f69-48e8-9802-977300a49f79" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/assets/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/ie8.css" afterPath="$PROJECT_DIR$/assets/css/ie8.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/main.css" afterPath="$PROJECT_DIR$/assets/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/ie/PIE.htc" afterPath="$PROJECT_DIR$/assets/js/ie/PIE.htc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/ie/html5shiv.js" afterPath="$PROJECT_DIR$/assets/js/ie/html5shiv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/main.js" afterPath="$PROJECT_DIR$/assets/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/ie8.scss" afterPath="$PROJECT_DIR$/assets/sass/ie8.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/main.scss" afterPath="$PROJECT_DIR$/assets/sass/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,17 +43,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="3088" column="19" lean-forward="false" selection-start-line="3088" selection-start-column="19" selection-end-line="3088" selection-end-column="19" />
+            <state relative-caret-position="563">
+              <caret line="3092" column="0" lean-forward="true" selection-start-line="3092" selection-start-column="0" selection-end-line="3092" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="188">
@@ -89,6 +80,7 @@
       <find>exclamation</find>
       <find>container</find>
       <find>uniform</find>
+      <find>fontawesome</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -108,13 +100,13 @@
         <option value="$PROJECT_DIR$/assets/sass/libs/_skel.scss" />
         <option value="$PROJECT_DIR$/assets/css/ie8.css" />
         <option value="$PROJECT_DIR$/assets/css/font-awesome.min.css" />
-        <option value="$PROJECT_DIR$/assets/css/main.css" />
         <option value="$PROJECT_DIR$/assets/js/jquery.js" />
         <option value="$PROJECT_DIR$/assets/js/mailgun.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/assets/js/jquery.min.js" />
         <option value="$PROJECT_DIR$/assets/js/util.js" />
         <option value="$PROJECT_DIR$/assets/js/main.js" />
+        <option value="$PROJECT_DIR$/assets/css/main.css" />
       </list>
     </option>
   </component>
@@ -218,12 +210,12 @@
       <option name="presentableId" value="Default" />
       <updated>1518521642560</updated>
       <workItem from="1518521644546" duration="11104000" />
-      <workItem from="1518610298539" duration="17554000" />
+      <workItem from="1518610298539" duration="18018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28658000" />
+    <option name="totallyTimeSpent" value="29122000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -440,14 +432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="3088" column="19" lean-forward="false" selection-start-line="3088" selection-start-column="19" selection-end-line="3088" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/mailgun.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -499,6 +483,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="137" column="58" lean-forward="false" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="3092" column="0" lean-forward="true" selection-start-line="3092" selection-start-column="0" selection-end-line="3092" selection-end-column="0" />
           <folding />
         </state>
       </provider>
