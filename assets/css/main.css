@@ -3081,3 +3081,12 @@ input[type="button"]:disabled,
 	}
 
 }
+
+.error_parent {
+    color: red;
+    display: none;
+    font-size: 10pt;
+    font-style: normal;
+    font-family: FontAwesome;
+    visibility: hidden;
+}
