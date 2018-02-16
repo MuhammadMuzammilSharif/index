@@ -1,110 +1,118 @@
-(function($) {
+(function ($) {
 
-	skel.breakpoints({
-		xlarge: '(max-width: 1680px)',
-		large: '(max-width: 1280px)',
-		medium: '(max-width: 1024px)',
-		small: '(max-width: 736px)',
-		xsmall: '(max-width: 480px)'
-	});
+    skel.breakpoints({
+        xlarge: '(max-width: 1680px)',
+        large: '(max-width: 1280px)',
+        medium: '(max-width: 1024px)',
+        small: '(max-width: 736px)',
+        xsmall: '(max-width: 480px)'
+    });
 
-	$(function() {
+    $(function () {
 
-		var $body = $('body'),
-			$header = $('#header'),
-			$nav = $('#nav'), $nav_a = $nav.find('a'),
-			$wrapper = $('#wrapper');
+        var $body = $('body'),
+            $header = $('#header'),
+            $nav = $('#nav'), $nav_a = $nav.find('a'),
+            $wrapper = $('#wrapper');
 
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
+        // Fix: Placeholder polyfill.
+        $('form').placeholder();
 
-		// Prioritize "important" elements on medium.
-			skel.on('+medium -medium', function() {
-				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
-				);
-			});
+        // Prioritize "important" elements on medium.
+        skel.on('+medium -medium', function () {
+            $.prioritize(
+                '.important\\28 medium\\29',
+                skel.breakpoint('medium').active
+            );
+        });
 
-		// Header.
-			var ids = [];
+        // Header.
+        var ids = [];
 
-			// Set up nav items.
-				$nav_a
-					.scrolly({ offset: 44 })
-					.on('click', function(event) {
+        // Set up nav items.
+        $nav_a
+            .scrolly({offset: 44})
+            .on('click', function (event) {
 
-						var $this = $(this),
-							href = $this.attr('href');
+                var $this = $(this),
+                    href = $this.attr('href');
 
-						// Not an internal link? Bail.
-							if (href.charAt(0) != '#')
-								return;
+                // Not an internal link? Bail.
+                if (href.charAt(0) != '#')
+                    return;
 
-						// Prevent default behavior.
-							event.preventDefault();
+                // Prevent default behavior.
+                event.preventDefault();
 
-						// Remove active class from all links and mark them as locked (so scrollzer leaves them alone).
-							$nav_a
-								.removeClass('active')
-								.addClass('scrollzer-locked');
+                // Remove active class from all links and mark them as locked (so scrollzer leaves them alone).
+                $nav_a
+                    .removeClass('active')
+                    .addClass('scrollzer-locked');
 
-						// Set active class on this link.
-							$this.addClass('active');
+                // Set active class on this link.
+                $this.addClass('active');
 
-					})
-					.each(function() {
+            })
+            .each(function () {
 
-						var $this = $(this),
-							href = $this.attr('href'),
-							id;
+                var $this = $(this),
+                    href = $this.attr('href'),
+                    id;
 
-						// Not an internal link? Bail.
-							if (href.charAt(0) != '#')
-								return;
+                // Not an internal link? Bail.
+                if (href.charAt(0) != '#')
+                    return;
 
-						// Add to scrollzer ID list.
-							id = href.substring(1);
-							$this.attr('id', id + '-link');
-							ids.push(id);
+                // Add to scrollzer ID list.
+                id = href.substring(1);
+                $this.attr('id', id + '-link');
+                ids.push(id);
 
-					});
+            });
 
-			// Initialize scrollzer.
-				$.scrollzer(ids, { pad: 300, lastHack: true });
+        // Initialize scrollzer.
+        $.scrollzer(ids, {pad: 300, lastHack: true});
 
-		// Off-Canvas Navigation.
+        // Off-Canvas Navigation.
 
-			// Title Bar.
-				$(
-					'<div id="titleBar">' +
-						'<a href="#header" class="toggle"></a>' +
-						'<span class="title">' + $('#logo').html() + '</span>' +
-					'</div>'
-				)
-					.appendTo($body);
+        // Title Bar.
+        $(
+            '<div id="titleBar">' +
+            '<a href="#header" class="toggle"></a>' +
+            '<span class="title">' + $('#logo').html() + '</span>' +
+            '</div>'
+        )
+            .appendTo($body);
 
-			// Header.
-				$('#header')
-					.panel({
-						delay: 500,
-						hideOnClick: true,
-						hideOnSwipe: true,
-						resetScroll: true,
-						resetForms: true,
-						side: 'right',
-						target: $body,
-						visibleClass: 'header-visible'
-					});
+        // Header.
+        $('#header')
+            .panel({
+                delay: 500,
+                hideOnClick: true,
+                hideOnSwipe: true,
+                resetScroll: true,
+                resetForms: true,
+                side: 'right',
+                target: $body,
+                visibleClass: 'header-visible'
+            });
 
-			// Fix: Remove navPanel transitions on WP<10 (poor/buggy performance).
-				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
-					$('#titleBar, #header, #wrapper')
-						.css('transition', 'none');
+        // Fix: Remove navPanel transitions on WP<10 (poor/buggy performance).
+        if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
+            $('#titleBar, #header, #wrapper')
+                .css('transition', 'none');
 
-	});
+    });
 
 })(jQuery);
+
+function clearForm() {
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("message").value = "";
+    document.getElementById("phone_no").value = "";
+}
 
 function submitForm(data) {
     var name = document.getElementById("name").value.trim();
@@ -114,65 +122,32 @@ function submitForm(data) {
     var phone = document.getElementById("phone_no").value.trim();
 
     if (form_validation(name, email, phone, subject, message)) {
-        /*Email.send(email, "muzammilsharif5319@gmail.com", "muhammadmuzammilsharif.github.io: " + subject, message,
-            "smtp.elasticemail.com", "muzammilsharif5319@gmail.com", "81dea4f3-48a2-4aaa-8b7b-5c758e85e19f",
-            function done(message) {
-                alert(message);
-            });*/
-       /* var api_key = 'key-e7e2b6730c78caf2cad626dd5fe528ea';
-        var domain = 'sandbox5a591795f08f4923aa71d3fa222fedb8.mailgun.org';
-        var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
-
-
-        mailgun.messages().send({
-            from: 'Excited User <me@samples.mailgun.org>',
-            to: 'serobnic@mail.ru',
-            subject: 'Hello',
-            text: 'Testing some Mailgun awesomeness!'
-        }, function (error, body) {
-            console.log(body);
-        });*/
-        $.ajax('https://api:key-e7e2b6730c78caf2cad626dd5fe528ea@api.mailgun.net/v3/sandbox5a591795f08f4923aa71d3fa222fedb8.mailgun.org/messages',
-            {
-                type: "POST",
-                api: 'key-e7e2b6730c78caf2cad626dd5fe528ea',
-                username: name,
-                password: 'key-e7e2b6730c78caf2cad626dd5fe528ea',
-                data: {
-                    "html": message,
-                    "subject": subject,
-                    "from": email,
-                    "to": "muzammilsharif5319@gmail.com"
-                },
-                success: function (a, b, c) {
-                    console.log('mail sent: ', b);
-                }.bind(this),
-                error: function (xhr, status, errText) {
-                    console.log('mail sent failed: ', xhr.responseText);
-                }
-            });
-        /*$.ajax({
-            type: "POST",
-            url: "https://mandrillapp.com/api/1.0/messages/send.json",
+        var $contactForm = $('#contact_me_form');
+        $.ajax({
+            url: "https://formspree.io/muzammilsharif5319@gmail.com",
+            method: "POST",
             data: {
-                'key': '308dcf488bfe6422a6c2c33b76c1dd3c-us17',
-                'message': {
-                    'from_email': email,
-                    'to': [
-                        {
-                            'email': 'muzammilsharif5319@gmail.com',
-                            'name': 'RECIPIENT NAME (OPTIONAL)',
-                            'type': 'to'
-                        }
-                    ],
-                    'autotext': 'true',
-                    'subject': subject,
-                    'html': message
-                }
+                name: name,
+                subject: "muhammadmuzammilsharif.github.io: " + subject,
+                email: email,
+                replyto: email,
+                phone: phone,
+                message: message
+            },
+            dataType: "json",
+            beforeSend: function() {
+                $contactForm.append('<div class="alert--loading"><span style="float: left">Sending Email </span><div class="loader"></div></div>');
+            },
+            success: function(data) {
+                $contactForm.find('.alert--loading').hide();
+                $contactForm.append('<div class="alert--alert--success">Message sent!</div>');
+                clearForm();
+            },
+            error: function(err) {
+                $contactForm.find('.alert--loading').hide();
+                $contactForm.append('<div class="alert--alert--error">Ops, there was an error.</div>');
             }
-        }).done(function (response) {
-            alert(response); // if you're into that sorta thing
-        });*/
+        })
     }
 }
 
