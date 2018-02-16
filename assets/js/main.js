@@ -124,7 +124,7 @@ function submitForm(data) {
     if (form_validation(name, email, phone, subject, message)) {
         var $contactForm = $('#contact_me_form');
         $.ajax({
-            url: "formspree.io/muzammilsharif5319@gmail.com",
+            url: "https://formspree.io/muzammilsharif5319@gmail.com",
             method: "POST",
             data: {
                 name: name,
@@ -146,7 +146,7 @@ function submitForm(data) {
             },
             success: function(data) {
                 document.getElementById("loading_txt").value = "Email sent.";
-                var loaderDialog = document.getElementById("alert--loading");
+                var loaderDialog = document.getElementById("loader_parent");
                 loaderDialog.style.visibility = "visible";
                 loaderDialog.style.display = "block";
                 var loader = document.getElementById("loader");
@@ -156,7 +156,7 @@ function submitForm(data) {
             },
             error: function(err) {
                 document.getElementById("loading_txt").value = "Something went wrong email does not sent";
-                var loaderDialog = document.getElementById("alert--loading");
+                var loaderDialog = document.getElementById("loader_parent");
                 loaderDialog.style.visibility = "visible";
                 loaderDialog.style.display = "block";
                 var loader = document.getElementById("loader");
