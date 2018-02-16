@@ -138,7 +138,7 @@ $contactForm.submit(function (e) {
             },
             dataType: "json",
             beforeSend: function () {
-                document.getElementById("loading_txt").value = "Sending Email";
+                document.getElementById("loading_txt").innerHTML = "Sending Email";
                 var loaderDialog = document.getElementById("loader_parent");
                 loaderDialog.style.visibility = "visible";
                 loaderDialog.style.display = "block";
@@ -147,23 +147,25 @@ $contactForm.submit(function (e) {
                 loader.style.display = "block";
             },
             success: function (data) {
-                document.getElementById("loading_txt").value = "Email sent.";
+                document.getElementById("loading_txt").innerHTML = "Email sent.";
                 var loaderDialog = document.getElementById("loader_parent");
                 loaderDialog.style.visibility = "visible";
                 loaderDialog.style.display = "block";
                 var loader = document.getElementById("loader");
                 loader.style.visibility = "hidden";
                 loader.style.display = "none";
+                document.getElementById("loading_txt").innerHTML = "Email sent.";
                 clearForm();
             },
             error: function (err) {
-                document.getElementById("loading_txt").value = "Something went wrong email does not sent";
+                document.getElementById("loading_txt").innerHTML = "Something went wrong email does not sent";
                 var loaderDialog = document.getElementById("loader_parent");
                 loaderDialog.style.visibility = "visible";
                 loaderDialog.style.display = "block";
                 var loader = document.getElementById("loader");
                 loader.style.visibility = "hidden";
                 loader.style.display = "none";
+                document.getElementById("loading_txt").innerHTML = "Something went wrong email does not sent";
             }
         })
     }
