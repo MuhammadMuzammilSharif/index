@@ -3111,6 +3111,8 @@ input[type="button"]:disabled,
 	text-align: center;
 	vertical-align: middle;
 	line-height: 50px;
+	padding: 10px 15px 0 0;
+	text-align: center;
 	margin-top: 15px;
 }
 
