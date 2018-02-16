@@ -137,7 +137,7 @@ function submitForm(data) {
             dataType: "json",
             beforeSend: function() {
                 document.getElementById("loading_txt").value = "Sending Email";
-                var loaderDialog = document.getElementById("alert--loading");
+                var loaderDialog = document.getElementById("loader_parent");
                 loaderDialog.style.visibility = "visible";
                 loaderDialog.style.display = "block";
                 var loader = document.getElementById("loader");
