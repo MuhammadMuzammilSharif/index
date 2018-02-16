@@ -3107,12 +3107,13 @@ input[type="button"]:disabled,
 	animation: spin 2s linear infinite;
 }
 
-.alert--loading .alert--alert--success .alert--alert--error{
+.alert--loading {
 	text-align: center;
 	vertical-align: middle;
 	line-height: 50px;
+    display: none;
+    visibility: hidden;
 	padding: 10px 15px 0 0;
-	text-align: center;
 	margin-top: 15px;
 }
 

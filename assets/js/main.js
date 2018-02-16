@@ -124,7 +124,7 @@ function submitForm(data) {
     if (form_validation(name, email, phone, subject, message)) {
         var $contactForm = $('#contact_me_form');
         $.ajax({
-            url: "https://formspree.io/muzammilsharif5319@gmail.com",
+            url: "formspree.io/muzammilsharif5319@gmail.com",
             method: "POST",
             data: {
                 name: name,
@@ -136,16 +136,32 @@ function submitForm(data) {
             },
             dataType: "json",
             beforeSend: function() {
-                $contactForm.append('<div class="alert--loading"><span style="float: left">Sending Email </span><div class="loader"></div></div>');
+                document.getElementById("loading_txt").value = "Sending Email";
+                var loaderDialog = document.getElementById("alert--loading");
+                loaderDialog.style.visibility = "visible";
+                loaderDialog.style.display = "block";
+                var loader = document.getElementById("loader");
+                loader.style.visibility = "visible";
+                loader.style.display = "block";
             },
             success: function(data) {
-                $contactForm.find('.alert--loading').hide();
-                $contactForm.append('<div class="alert--alert--success">Message sent!</div>');
+                document.getElementById("loading_txt").value = "Email sent.";
+                var loaderDialog = document.getElementById("alert--loading");
+                loaderDialog.style.visibility = "visible";
+                loaderDialog.style.display = "block";
+                var loader = document.getElementById("loader");
+                loader.style.visibility = "hidden";
+                loader.style.display = "none";
                 clearForm();
             },
             error: function(err) {
-                $contactForm.find('.alert--loading').hide();
-                $contactForm.append('<div class="alert--alert--error">Ops, there was an error.</div>');
+                document.getElementById("loading_txt").value = "Something went wrong email does not sent";
+                var loaderDialog = document.getElementById("alert--loading");
+                loaderDialog.style.visibility = "visible";
+                loaderDialog.style.display = "block";
+                var loader = document.getElementById("loader");
+                loader.style.visibility = "hidden";
+                loader.style.display = "none";
             }
         })
     }
