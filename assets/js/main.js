@@ -114,6 +114,61 @@ function clearForm() {
     document.getElementById("phone_no").value = "";
 }
 
+var $contactForm = $('#contact_me_form');
+$contactForm.submit(function (e) {
+    e.preventDefault();
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var subject = document.getElementById("subject").value.trim();
+    var message = document.getElementById("message").value.trim();
+    var phone = document.getElementById("phone_no").value.trim();
+
+    if (form_validation(name, email, phone, subject, message)) {
+        var $contactForm = $('#contact_me_form');
+        $.ajax({
+            url: "https://formspree.io/muzammilsharif5319@gmail.com",
+            method: "POST",
+            data: {
+                name: name,
+                subject: "muhammadmuzammilsharif.github.io: " + subject,
+                email: email,
+                replyto: email,
+                phone: phone,
+                message: message
+            },
+            dataType: "json",
+            beforeSend: function () {
+                document.getElementById("loading_txt").value = "Sending Email";
+                var loaderDialog = document.getElementById("loader_parent");
+                loaderDialog.style.visibility = "visible";
+                loaderDialog.style.display = "block";
+                var loader = document.getElementById("loader");
+                loader.style.visibility = "visible";
+                loader.style.display = "block";
+            },
+            success: function (data) {
+                document.getElementById("loading_txt").value = "Email sent.";
+                var loaderDialog = document.getElementById("loader_parent");
+                loaderDialog.style.visibility = "visible";
+                loaderDialog.style.display = "block";
+                var loader = document.getElementById("loader");
+                loader.style.visibility = "hidden";
+                loader.style.display = "none";
+                clearForm();
+            },
+            error: function (err) {
+                document.getElementById("loading_txt").value = "Something went wrong email does not sent";
+                var loaderDialog = document.getElementById("loader_parent");
+                loaderDialog.style.visibility = "visible";
+                loaderDialog.style.display = "block";
+                var loader = document.getElementById("loader");
+                loader.style.visibility = "hidden";
+                loader.style.display = "none";
+            }
+        })
+    }
+});
+
 function submitForm(data) {
     var name = document.getElementById("name").value.trim();
     var email = document.getElementById("email").value.trim();
