@@ -1,329 +1,637 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/fav-icon.png" type="image/x-icon"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Muhammad Muzammil Sharif</title>
-    <meta charset="utf-8"/>
-    <meta name="referrer" content="origin" />
-    <meta name="referrer"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="assets/css/main.css"/>
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
-    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Icon css link -->
+    <link href="vendors/material-icon/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/linears-icon/style.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Extra plugin css -->
+    <link href="vendors/owl-carousel/assets/owl.carousel.css" rel="stylesheet">
+    <link href="vendors/animate-css/animate.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/colors/default.css" title="default">
+    <link rel="alternate stylesheet" href="css/colors/orange.css" title="orange">
+    <link rel="alternate stylesheet" href="css/colors/pink.css" title="pink">
+    <link rel="alternate stylesheet" href="css/colors/violet.css" title="violet">
+    <link rel="alternate stylesheet" href="css/colors/blue.css" title="blue">
+    <link rel="alternate stylesheet" href="css/colors/past.css" title="past">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body>
+<body class="dark_bg" data-spy="scroll" data-target="#bs-example-navbar-collapse-1" data-offset="80"
+      data-scroll-animation="true">
 
-<!-- Header -->
-<section id="header">
-    <header>
-        <span class="image avatar"><img src="images/muzammil.png" alt=""/></span>
-        <h1 id="logo"><a href="#">Muhammad Muzammil Sharif</a></h1>
-        <p>Android Application Developer</p>
-    </header>
-    <nav id="nav">
-        <ul>
-            <li><a href="#one" class="active">About</a></li>
-            <li><a href="#two">Things I Can Do</a></li>
-            <li><a href="#three">A Few Accomplishments</a></li>
-            <li><a href="#four">Contact</a></li>
-        </ul>
-    </nav>
-    <footer>
-        <ul class="icons">
-            <li>
-                <a href="https://github.com/MuhammadMuzammilSharif/" class="icon fa-github" target="_blank">
-                    <span class="label" target="_blank">Github</span>
-                </a>
-            </li>
-            <li>
-                <a href="mailto:muzammilsharif5319@gmail.com" class="icon fa-envelope" target="_blank">
-                    <span class="label" target="_blank">Email</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/muhammad-muzammil-sharif" target="_blank" class="icon fa-linkedin">
-                    <span class="label">Linkedin</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/Muhammad.Muzammil.Sharif" target="_blank" class="icon fa-facebook">
-                    <span class="label">Facebook</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://plus.google.com/+MuhammadMuzammilSharif" class="icon fa-google-plus" target="_blank">
-                    <span class="label">GPlus</span>
-                </a>
-            </li>
-        </ul>
-    </footer>
-</section>
+<div id="preloader">
+    <div id="preloader_spinner">
+        <div class="spinner"></div>
+    </div>
+</div>
 
-<!-- Wrapper -->
-<div id="wrapper">
-
-    <!-- Main -->
-    <div id="main">
-
-        <!-- One -->
-        <section id="one">
-
-            <div class="container">
-                <header class="major">
-                    <h3>About:</h3>
-                </header>
-                <p>Experienced Android Developer with a demonstrated history of working in the information technology
-                    and services industry. Skilled in Android, Java, Kotlin, c, cpp, cSharp, PHP, Codeignater, Web(HTML, CSS,
-                    JS), SQL, SQLite, Rest APIs Development, Microsoft Excel, Customer Service and Microsoft Word.
-                    Strong engineering professional with a Bachelor’s Degree focused in Computer Science from University
-                    of Engineering and Technology, Lahore.</p>
+<!--================ Frist hader Area =================-->
+<header class="header_area">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt=""></a>
             </div>
-        </section>
 
-        <!-- Two -->
-        <section id="two">
-            <div class="container">
-                <h3>Things I Can Do</h3>
-                <p>I can give consultancy in development of your Android application. I can write code in multiple
-                    platforms as shown in bellow.</p>
-                <ul class="feature-icons">
-                    <li class="fa-android">Android Studio</li>
-                    <li class="fa-code">Kotlin</li>
-                    <li class="fa-code">Java</li>
-                    <li class="fa-code">C, C++ & CSharp</li>
-                    <li class="fa-html5">Web (Html 5, CSS3 & JS)</li>
-                    <li class="fa-free-code-camp">Php (Codeignater)</li>
-                    <li class="fa-exchange">Rest APIs</li>
-                    <li class="fa-bug">Bug Fixing</li>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#about">ABOUT ME </a></li>
+                    <li><a href="#skill">Skill</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#service">SERVICES</a></li>
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
-                <!--<div id="one_header">
-                    <marquee class="one_head" behavior="scroll" direction="left">
-                        <img width="100px" height="100px" src="images/android.png" alt="Android"/>
-                        <img width="100px" height="100px" src="images/java.png" alt="Java"/>
-                        <img width="100px" height="100px" src="images/cs.png" alt="C#"/>
-                        <img width="100px" height="100px" src="images/cpp.png" alt="C & C++"/>
-                        <img width="100px" height="100px" src="images/html.png" alt="HTML"/>
-                        <img width="100px" height="100px" src="images/css.png" alt="CSS"/>
-                        <img width="100px" height="100px" src="images/js.png" alt="JavaScript"/>
-                        <img width="100px" height="100px" src="images/php.png" alt="PHP"/>
-                        <img width="100px" height="100px" src="images/web.png" alt="Web"/>
-                        <img width="100px" height="100px" src="images/codeignator.png" alt="CodeIgnater"/>
-                        <img width="100px" height="100px" src="images/rest.png" alt="Rest APIs"/>
-                        <img width="100px" height="100px" src="images/bug.png" alt="Bug Fixing"/>
-                    </marquee>
-                </div>-->
-            </div>
-        </section>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </div>
+</header>
+<!--================End Footer Area =================-->
 
-        <!-- Three -->
-        <section id="three">
-            <div class="container">
-                <h3>A Few Accomplishments</h3>
-                <p>In my Educational carrier and 1.8 year + professional carrier i have done many accomplishments and
-                    some of them are listed bellow:</p>
-                <div class="features">
-                    <article>
-                        <a href="https://play.google.com/store/apps/details?id=com.rexsolution.ikioska" target="_blank"
-                           class="image">
-                            <img src="https://lh3.googleusercontent.com/378N7IwM-MSXeVzvveBKx4445TgZ6KLdTiM4ASW9w9JkiUvNadmHV9cHjz2bq4nXYds=w300-rw"
-                                 alt="Location Helper"/>
-                        </a>
-                        <div class="inner">
-                            <h4>iKioska (Android Application)</h4>
-                            <p>iKioska is an App for Readers Offering Newsletters from Albania, Kosovo, Macedonia and
-                                Diaspora, where they can buy them at a certain price and read them offline.
-                                <a href="https://play.google.com/store/apps/details?id=com.rexsolution.ikioska"
-                                   target="_blank">
-                                    Read more...
-                                </a>
-                            </p>
-                        </div>
-                    </article>
-                    <article>
-                        <a href="https://github.com/MuhammadMuzammilSharif/LocationManager" target="_blank"
-                           class="image">
-                            <img src="images/location.png" alt="Location Manager"/>
-                        </a>
-                        <div class="inner">
-                            <h4>Location Manager (Android Library)</h4>
-                            <p>Location Manager is an android library that let your android activity or fragment get
-                                location by adding just few lines of code.
-                                <a href="https://github.com/MuhammadMuzammilSharif/LocationManager" target="_blank">
-                                    Read more...
-                                </a>
-                            </p>
-                        </div>
-                    </article>
-                    <article>
-                        <a href="https://play.google.com/store/apps/details?id=com.appload.mkc" target="_blank"
-                           class="image">
-                            <img src="images/mk.png" alt="Recycle for MK"/>
-                        </a>
-                        <div class="inner">
-                            <h4>Recycle for MK</h4>
-                            <p>Recycle for MK is an Android based application develop to ficilitate UK recycling worker
-                                to collect different categories of garbages at thire respective places.
-                                <a href="https://play.google.com/store/apps/details?id=com.appload.mkc" target="_blank">
-                                    Read more...
-                                </a>
-                            </p>
-                        </div>
-                    </article>
-                    <article>
-                        <a href="https://play.google.com/store/apps/details?id=com.meezabgroup.meezab" class="image"
-                           target="_blank">
-                            <img src="images/meezab.png" alt=""/>
-                        </a>
-                        <div class="inner">
-                            <h4>Meezab (Meezab Group).</h4>
-                            <p>Meezab is an Android base application by Meezab Group to facilitate their valuable
-                                customer to track their Hajj & Umrah trip by providing their documents inside app, find
-                                path to MAKKAH & MADINA, find path to their accommodation, find their partner Mutamers,
-                                find path to their partner Mutamers,
-                                <a href="https://play.google.com/store/apps/details?id=com.meezabgroup.meezab"
-                                   target="_blank">
-                                    Read more...
-                                </a>
-                            </p>
-                        </div>
-                    </article>
-                    <article>
-                        <a href="https://play.google.com/store/apps/details?id=com.rexsolution.onlinemusicstreaming"
-                           class="image" target="_blank">
-                            <img src="https://lh3.googleusercontent.com/IT8uZhnpNFy0qCKGECePIuiHW8ze7bsLl_H8MfK6ClauPjr6h_O4b9kC3uoI96fSDQ=w300-rw"
-                                 alt=""/>
-                        </a>
-                        <div class="inner">
-                            <h4>iMusic Streamer</h4>
-                            <p>iMusic Streamer is very simple to use music streaming Android Based Application deals
-                                with both device and online music at the same time and with multiple options like Adding
-                                songs on playlist, Remove songs from playlist, Shuffle feature, Repeat feature,
-                                Next/previous song, Add a song to favorite,
-                                <a href="https://play.google.com/store/apps/details?id=com.rexsolution.onlinemusicstreaming"
-                                   target="_blank">
-                                    Read more...
-                                </a>
-                            </p>
-                        </div>
-                    </article>
-                    <article>
-                        <a href="https://drive.google.com/file/d/0B8mHinvY9TmfaXFMT0NSZGhUclE/view?usp=sharing" target="_blank" class="image">
-                            <img src="acc/fyp/screen.png" alt="Minimum Cost Flow"/>
-                        </a>
-                        <div class="inner">
-                            <h4>Minimum Cost Flow using Network Simplex Algorithm</h4>
-                            <p>This Project base on Android, Java, JavaScrip, HTML and css language that find the
-                                minimum path for distribution problem in polynomial time by useing Network Simplex
-                                Algorithm.</p>
-                        </div>
-                    </article>
-                    <article>
-                        <a href="https://play.google.com/store/apps/details?id=com.rexsolution.simplecalculator"
-                           target="_blank" class="image">
-                            <img src="https://lh3.googleusercontent.com/LWoWuTsaxcX3RGLQ2ZKrwJHFVJQSBzCcmNAfjDuZ6jen66nTrYq98ZBdb3Oid3smnw=w300-rw"
-                                 alt="Simple Calculator"/>
-                        </a>
-                        <div class="inner">
-                            <h4>Simple Calculator</h4>
-                            <p>My very first application on playstore, this application is a very simple calculator like
-                                microsoft window's standerd calculator but much diffrent in ui.
-                                <a href="https://play.google.com/store/apps/details?id=com.rexsolution.simplecalculator"
-                                   target="_blank">
-                                    Read more...
-                                </a>
-                            </p>
-                        </div>
-                    </article>
+<!--================Total container Area =================-->
+<div class="container main_container">
+    <div class="content_inner_bg row m0">
+        <section class="about_person_area pad" id="about">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="person_img">
+                        <img src="img/member/muzammil.jpg" alt="">
+                        <a class="download_btn" href="#" style="display: none"><span>Download Resume</span></a>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Four -->
-        <section id="four">
-            <div class="container">
-                <h3>Contact Me</h3>
-                <p>If you want to build an android application or need any help about android studio or application that
-                    I can do for you can contact me.</p>
-                <form id="contact_me_form" method="post" action="javascript:submitForm(null)" onsubmit="submitForm(null)">
-                    <div class="row uniform">
-                        <div class="6u 12u(xsmall)">
-                            <div class="error_parent" id="name_error">
-                                <span class="fas fa-exclamation-triangle"> &nbsp;Please provide fill name.</span>
-                            </div>
-                            <input type="text" name="name" id="name" placeholder="Full Name"/>
-                        </div>
-                        <div class="6u 12u(xsmall)">
-                            <div class="error_parent" id="email_error">
-                                <span class="fas fa-exclamation-triangle" id="email_error_span"> &nbsp;Please provide valid email.</span>
-                            </div>
-                            <input type="email" name="email" id="email" placeholder="Email e.g. example@domain.com"/>
-                        </div>
-                    </div>
-                    <div class="row uniform">
-                        <div class="12u">
-                            <div class="error_parent" id="phone_error">
-                                <span class="fas fa-exclamation-triangle" id="phone_error_span"> &nbsp;Please provide phone number.</span>
-                            </div>
-                            <input type="text" name="phone" oninput="phoneValidation(null)" id="phone_no"
-                                   placeholder="Phone"/>
-                        </div>
-                    </div>
-                    <div class="row uniform">
-                        <div class="12u">
-                            <div class="error_parent" id="subject_error">
-                                <span class="fas fa-exclamation-triangle"> &nbsp;Please provide subject.</span>
-                            </div>
-                            <input type="text" name="subject" id="subject" placeholder="Subject"/>
-                        </div>
-                    </div>
-                    <div class="row uniform">
-                        <div class="12u">
-                            <div class="error_parent" id="msg_error">
-                                <span class="fas fa-exclamation-triangle"> &nbsp;Please provide message.</span>
-                            </div>
-                            <textarea name="message" id="message" placeholder="Message" rows="6"></textarea>
-                        </div>
-                    </div>
-                    <div class="row uniform">
-                        <div class="12u">
-                            <ul class="actions">
-                                <li>
-                                    <input type="submit" class="special" value="Send Message"/>
+                <div class="col-md-7">
+                    <div class="row person_details">
+                        <h3><span>Muhammad Muzammil Sharif</span></h3>
+                        <h4>Android Application Developer</h4>
+                        <p>Experienced Android Application Developer with a demonstrated history of working in the
+                            information technology and services industry. Skilled in Android, Java, Kotlin, c, cpp,
+                            cSharp, PHP, Codeignater, Web(HTML, CSS, JS), SQL, SQLite, Rest APIs Development, Microsoft
+                            Excel, Customer Service and Microsoft Word. Strong engineering professional with a
+                            Bachelor’s Degree focused in Computer Science from University of Engineering and Technology,
+                            Lahore.</p>
+                        <div class="person_information">
+                            <ul>
+                                <li><a>Age</a></li>
+                                <li><a>Nationality</a></li>
+                                <li><a>Address</a></li>
+                                <li><a>Phone</a></li>
+                                <li><a>Skype</a></li>
+                                <li><a>Email</a></li>
+                                <li><a>Website</a></li>
+                            </ul>
+                            <ul>
+                                <li><a>23</a></li>
+                                <li><a>Citizen of Pakistan</a></li>
+                                <li><a>Mughal Pura Lahore.</a></li>
+                                <li><a href="tel:+923364808627">+92 3364808627</a></li>
+                                <li><a href="skype:muhammad_muzammil_sharif?call">muhammad_muzammil_sharif</a></li>
+                                <li><a target="_blank" href="mailto:muzammilsharif5319@gmail.com">muzammilsharif5319@gmail.com</a>
                                 </li>
-                                <li>
-                                    <input type="reset" value="Reset Form"/>
+                                <li><a target="_blank" href="https://muhammadmuzammilsharif.github.io">https://muhammadmuzammilsharif.github.io</a>
                                 </li>
                             </ul>
                         </div>
+                        <ul class="social_icon">
+                            <li><a target="_blank" href="https://www.facebook.com/Muhammad.Muzammil.Sharif"><i
+                                    class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="https://twitter.com/M_MuzamilSharif"><i
+                                    class="fa fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="https://www.instagram.com/muhammad_muzammil_sharif"><i
+                                    class="fa fa-instagram"></i></a></li>
+                            <li><a target="_blank" href="https://plus.google.com/+MuhammadMuzammilSharif"><i
+                                    class="fa fa-google-plus"></i></a></li>
+                            <li><a target="_blank" href="https://www.linkedin.com/in/muhammad-muzammil-sharif"><i
+                                    class="fa fa-linkedin"></i></a></li>
+                            <li style="display: none"><a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
+                            </li>
+                            <li><a href="skype:muhammad_muzammil_sharif?call"><i class="fa fa-skype"></i></a></li>
+                            <li style="display: none"><a target="_blank" href="#"><i class="fa fa-flickr"></i></a></li>
+                            <li style="display: none"><a target="_blank" href="#"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                            <li style="display: none"><a target="_blank" href="#"><i class="fa fa-rss"></i></a></li>
+                            <li><a target="_blank" href="https://github.com/MuhammadMuzammilSharif"><i
+                                    class="fa fa-github"></i></a></li>
+                        </ul>
                     </div>
-                    <div class="alert--loading" id="loader_parent">
-                        <span style="float: left" id="loading_txt">Sending Email </span>
-                        <div class="loader" id="loader"></div>
-                    </div>
-                </form>
+                </div>
             </div>
         </section>
-
+        <section class="myskill_area pad" id="skill">
+            <div class="main_title">
+                <h2>My Skill</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 wow fadeInUp animated">
+                    <div class="skill_text">
+                        <h4>Android Application Development</h4>
+                        <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Loren Ipsum has
+                            been the industry's standard dummy text.</p>-->
+                    </div>
+                    <div class="skill_item_inner">
+                        <div class="single_skill">
+                            <h4>Java</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                     aria-valuemax="100">
+                                    <div class="progress_parcent"><span class="counter">80</span>%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_skill">
+                            <h4>Kotlin</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                     aria-valuemax="100">
+                                    <div class="progress_parcent"><span class="counter">70</span>%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_skill">
+                            <h4>XML Responsive &amp; Dynamic Layout</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
+                                     aria-valuemax="100">
+                                    <div class="progress_parcent"><span class="counter">85</span>%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_skill">
+                            <h4>App Signing And Publishing</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                     aria-valuemax="100">
+                                    <div class="progress_parcent"><span class="counter">80</span>%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeInUp animated">
+                    <div class="skill_text">
+                        <h4>Programming and Web Development</h4>
+                        <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Loren Ipsum has
+                            been the industry's standard dummy text.</p>-->
+                    </div>
+                    <div class="skill_item_inner">
+                        <div class="single_skill">
+                            <h4>Object Oriented Programming</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                     aria-valuemax="100">
+                                    <div class="progress_parcent"><span class="counter">80</span>%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_skill">
+                            <h4>DataStructure &amp; Logic building</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                     aria-valuemax="100">
+                                    <div class="progress_parcent"><span class="counter">75</span>%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_skill">
+                            <h4>Web (Html 5, CSS3 & JS)</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                                     aria-valuemax="100">
+                                    <div class="progress_parcent"><span class="counter">50</span>%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_skill">
+                            <h4>PHP, API Development &amp; MySQL</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                                     aria-valuemax="100">
+                                    <div class="progress_parcent"><span class="counter">50</span>%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="education_area pad" id="education">
+            <div class="main_title">
+                <h2>Education</h2>
+            </div>
+            <div class="education_inner_area">
+                <div class="education_item wow fadeInUp animated" data-line="U">
+                    <h6>2013-2017</h6>
+                    <a href="#"><h4>BSCS</h4></a>
+                    <h5>University of Engineering and Technology</h5>
+                    <p>I completed my BS honors degree in Computer Science from UET Lahore with 3.438 CGPA in 2017</p>
+                </div>
+            </div>
+        </section>
+        <section class="service_area" id="service">
+            <div class="main_title">
+                <h2>SERVICES</h2>
+            </div>
+            <div class="service_inner row">
+                <!--<div class="col-md-6">
+                    <div class="service_item wow fadeIn animated">
+                        <i class="fa fa-wordpress" aria-hidden="true"></i>
+                        <a href="#"><h4>Wordpress Development</h4></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elits, sed do mod, tempor ets incididunt
+                            ut labore et dolore magna aliqua. Ut enim adtiesm minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service_item wow fadeIn animated">
+                        <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                        <a href="#"><h4>Creative Design</h4></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elits, sed do mod, tempor ets incididunt
+                            ut labore et dolore magna aliqua. Ut enim adtiesm minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>-->
+                <div class="col-md-6">
+                    <div class="service_item wow fadeIn animated">
+                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                        <a href="#"><h4>Mobile Apps Development</h4></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elits, sed do mod, tempor ets incididunt
+                            ut labore et dolore magna aliqua. Ut enim adtiesm minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+                <!--<div class="col-md-6">
+                    <div class="service_item wow fadeIn animated">
+                        <i class="fa fa-maxcdn" aria-hidden="true"></i>
+                        <a href="#"><h4>Social Media Marketing</h4></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elits, sed do mod, tempor ets incididunt
+                            ut labore et dolore magna aliqua. Ut enim adtiesm minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service_item wow fadeIn animated">
+                        <i class="fa fa-camera" aria-hidden="true"></i>
+                        <a href="#"><h4>Professional Photography</h4></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elits, sed do mod, tempor ets incididunt
+                            ut labore et dolore magna aliqua. Ut enim adtiesm minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>-->
+                <div class="col-md-6">
+                    <div class="service_item wow fadeIn animated">
+                        <i class="fa fa-laptop" aria-hidden="true"></i>
+                        <a href="#"><h4>Website Development</h4></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elits, sed do mod, tempor ets incididunt
+                            ut labore et dolore magna aliqua. Ut enim adtiesm minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio_area pad" id="portfolio">
+            <div class="main_title">
+                <h2>Portfolio</h2>
+            </div>
+            <div class="porfolio_menu">
+                <ul class="causes_filter">
+                    <li class="active" data-filter="*"><a href="">All</a></li>
+                    <li data-filter=".java"><a href="">Java</a></li>
+                    <li data-filter=".kotlin"><a href="">Kotlin</a></li>
+                    <li data-filter=".apps"><a href="">Apps</a></li>
+                    <li data-filter=".library"><a href="">Library</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="portfolio_list_inner">
+                    <div class="col-md-4 kotlin library">
+                        <div class="portfolio_item">
+                            <a href="https://github.com/MuhammadMuzammilSharif/sectionalAdapter">
+                                <div class="portfolio_img">
+                                    <img src="img/portfolio/sectional_adapter.png" alt="">
+                                </div>
+                                <div class="portfolio_title"><h4>Sectional Adapter</h4>
+                                    <h5>Android Library</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 java apps kotlin">
+                        <div class="portfolio_item">
+                            <a href="https://play.google.com/store/apps/details?id=com.rexsolution.ikioska">
+                                <div class="portfolio_img">
+                                    <img src="img/portfolio/ikioska.png" alt="">
+                                </div>
+                                <div class="portfolio_title"><h4>Ikioska</h4>
+                                    <h5>Android Application</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 java library">
+                        <div class="portfolio_item">
+                            <a href="https://github.com/MuhammadMuzammilSharif/LocationManager">
+                                <div class="portfolio_img">
+                                    <img src="img/portfolio/location.png" alt="">
+                                </div>
+                                <div class="portfolio_title"><h4>Location Manager</h4>
+                                    <h5>Android Library</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 java apps">
+                        <div class="portfolio_item">
+                            <a href="https://play.google.com/store/apps/details?id=com.appload.mkc">
+                                <div class="portfolio_img">
+                                    <img src="img/portfolio/mk.png" alt="">
+                                </div>
+                                <div class="portfolio_title"><h4>Recycle for MK</h4>
+                                    <h5>Android Application</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 java apps">
+                        <div class="portfolio_item">
+                            <a href="https://play.google.com/store/apps/details?id=com.meezabgroup.meezab">
+                                <div class="portfolio_img">
+                                    <img src="img/portfolio/meezab.png" alt="">
+                                </div>
+                                <div class="portfolio_title"><h4>Meezab</h4>
+                                    <h5>Android Application</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 java apps">
+                        <div class="portfolio_item">
+                            <a href="https://play.google.com/store/apps/details?id=com.rexsolution.onlinemusicstreaming">
+                                <div class="portfolio_img">
+                                    <img src="img/portfolio/imusic.png" alt="">
+                                </div>
+                                <div class="portfolio_title"><h4>iMusic Streamer</h4>
+                                    <h5>Android Application</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 java apps library">
+                        <div class="portfolio_item">
+                            <a href="https://drive.google.com/file/d/0B8mHinvY9TmfaXFMT0NSZGhUclE/view">
+                                <div class="portfolio_img">
+                                    <img src="img/portfolio/screen.png" alt="">
+                                </div>
+                                <div class="portfolio_title"><h4>Minimum Cost Flow using Network Simplex Algorithm</h4>
+                                    <h5>Research Application</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 java apps">
+                        <div class="portfolio_item">
+                            <a href="https://play.google.com/store/apps/details?id=com.rexsolution.simplecalculator">
+                                <div class="portfolio_img">
+                                    <img src="https://lh3.googleusercontent.com/LWoWuTsaxcX3RGLQ2ZKrwJHFVJQSBzCcmNAfjDuZ6jen66nTrYq98ZBdb3Oid3smnw=w300-rw"
+                                         alt="">
+                                </div>
+                                <div class="portfolio_title"><h4>Simple Calculator</h4>
+                                    <h5>Android Application</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact_area pad" id="contact">
+            <div class="main_title">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="left_contact_details wow fadeInUp animated">
+                        <div class="contact_title">
+                            <h3>Contact Info</h3>
+                        </div>
+                        <p>If you want to build an android application or need any help about android studio or
+                            application that I can do for you can contact me.</p>
+                        <div class="media">
+                            <div class="media-left">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4>Phone</h4>
+                                <p>00 92 336 4808627</p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4>Skype</h4>
+                                <p>muhammad_muzammil_sharif</p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <i class="fa fa-envelope-o"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4>Email</h4>
+                                <p>muzammilsharif5319@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact_from_area wow fadeInUp animated">
+                        <div class="contact_title">
+                            <h3>Send Message</h3>
+                        </div>
+                        <div class="row">
+                            <form action="https://formspree.io/muzammilsharif5319@gmail.com" method="post"
+                                  id="contactForm">
+                                <div class="form-group col-md-12">
+                                    <input type="text" class="form-control" name="name" id="name"
+                                           placeholder="First Name*">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="text" class="form-control" name="last" id="last"
+                                           placeholder="Last Name*">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                           placeholder="Your Email*">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="text" class="form-control" name="subject" id="subject"
+                                           placeholder="Subject">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <textarea class="form-control" rows="1" id="message" name="message"
+                                              placeholder="Write Message"></textarea>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <button class="btn btn-default contact_btn" type="submit"><span>Send Massage</span>
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="success">
+                                <p>Your text message sent successfully!</p>
+                            </div>
+                            <div id="error">
+                                <p>Sorry! Message not sent. Something went wrong!!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Map Area =================-->
+        <!--<div id="mapBox" class="mapBox row m0"
+             data-lat="37.3818288"
+             data-lon="-122.0658212"
+             data-zoom="13"></div>-->
+        <!--================End Map Area =================-->
     </div>
-    <!-- Footer -->
-    <section id="footer">
+</div>
+<!--================End Total container Area =================-->
+
+<!--================footer Area =================-->
+<footer class="footer_area">
+    <div class="footer_inner">
         <div class="container">
-            <ul class="copyright">
-                <li>&copy; Muhammad Muzammil Sharif. All rights reserved.</li>
+            <img src="img/footer-logo.png" alt="">
+            <ul class="social_icon">
+                <li><a target="_blank" href="https://www.facebook.com/Muhammad.Muzammil.Sharif"><i
+                        class="fa fa-facebook"></i></a></li>
+                <li><a target="_blank" href="https://twitter.com/M_MuzamilSharif"><i class="fa fa-twitter"></i></a></li>
+                <li><a target="_blank" href="https://www.instagram.com/muhammad_muzammil_sharif"><i
+                        class="fa fa-instagram"></i></a></li>
+                <li><a target="_blank" href="https://plus.google.com/+MuhammadMuzammilSharif"><i
+                        class="fa fa-google-plus"></i></a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/muhammad-muzammil-sharif"><i
+                        class="fa fa-linkedin"></i></a></li>
+                <li style="display: none"><a target="_blank" href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="skype:muhammad_muzammil_sharif?call"><i class="fa fa-skype"></i></a></li>
+                <li style="display: none"><a target="_blank" href="#"><i class="fa fa-flickr"></i></a></li>
+                <li style="display: none"><a target="_blank" href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li style="display: none"><a target="_blank" href="#"><i class="fa fa-rss"></i></a></li>
+                <li><a target="_blank" href="https://github.com/MuhammadMuzammilSharif"><i class="fa fa-github"></i></a>
+                </li>
             </ul>
         </div>
-    </section>
+    </div>
+    <div class="footer_copyright">
+        <div class="container">
+            <div class="pull-left">
+                <h5>
+                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                            aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </h5>
+            </div>
+            <div class="pull-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#about">ABOUT ME </a></li>
+                    <li><a href="#skill">Skill</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#service">SERVICES</a></li>
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--================End footer Area =================-->
 
+<div class="envalab-style-switch" id="switch-style">
+    <div class="switch-button" id="toggle-switcher"><i class="fa fa-gears"></i></div>
+    <div class="switched-options">
+        <div class="config-title">Color Panel</div>
+        <ul class="styles">
+            <li>
+                <a href=# onclick='return setActiveStyleSheet("default"),!1' title="default"></a>
+            </li>
+            <li>
+                <a href=# onclick='return setActiveStyleSheet("orange"),!1' title="orange"></a>
+            </li>
+            <li>
+                <a href=# onclick='return setActiveStyleSheet("pink"),!1' title="pink"></a>
+            </li>
+            <li>
+                <a href=# onclick='return setActiveStyleSheet("violet"),!1' title="violet"></a>
+            </li>
+            <li>
+                <a href=# onclick='return setActiveStyleSheet("blue"),!1' title="blue"></a>
+            </li>
+            <li>
+                <a href=# onclick='return setActiveStyleSheet("past"),!1' title="past"></a>
+            </li>
+        </ul>
+    </div>
 </div>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollzer.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<!--[if lte IE 8]>
-<script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="assets/js/main.js"></script>
 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Extra plugin js -->
+<script src="vendors/counter-up/waypoints.min.js"></script>
+<script src="vendors/counter-up/jquery.counterup.min.js"></script>
+<script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+<script src="vendors/isotope/isotope.pkgd.min.js"></script>
+<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+
+<script src="vendors/style-switcher/styleswitcher.js"></script>
+<script src="vendors/style-switcher/switcher-active.js"></script>
+
+<script src="vendors/animate-css/wow.min.js"></script>
+
+<!--gmaps Js-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+<script src="js/gmaps.min.js"></script>
+
+<!-- contact js -->
+<script src="js/jquery.form.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/contact.js"></script>
+
+<script src="js/theme.js"></script>
 </body>
 </html>
