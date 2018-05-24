@@ -47,10 +47,11 @@ $(document).ready(function(){
                 }
             },
             submitHandler: function(form) {
+				alert(form.toString());
                 $(form).ajaxSubmit({
                     type:"POST",
                     data: $(form).serialize(),
-                    url:"contact_process.php",
+                    url:"https://formspree.io/muzammilsharif5319@gmail.com",
                     success: function() {
                         $('#contactForm :input').attr('disabled', 'disabled');
                         $('#contactForm').fadeTo( "slow", 0.15, function() {

@@ -87,6 +87,10 @@
     .blog_slider_area, .instagram_area {
         min-height: 420px;
     }
+	
+	.contact_area{
+		padding-bottom: 15px;
+	}
 
     .contact_area .contact_from_area {
         margin-top: 40px;
