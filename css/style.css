@@ -447,12 +447,12 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .social_icon li:last-child a {
-  color: #faaa5e;
-  border-color: #faaa5e;
+  color: #000000;
+  border-color: #000000;
 }
 
 .social_icon li:last-child:hover a {
-  background: #faaa5e;
+  background: #606060;
 }
 
 .social_icon li:hover a {
